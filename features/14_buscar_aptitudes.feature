@@ -10,7 +10,7 @@ Feature: Buscar aptitudes
     When Click configuracion
     When Click aptitudes
     When Escribir aptitud
-    Then Click boton buscar
+    Then Click boton buscar aptitud
       Examples:
 
         | user | clave |

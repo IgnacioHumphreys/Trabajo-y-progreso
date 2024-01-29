@@ -10,7 +10,7 @@ Feature: Buscar ministerio
     When Click configuracion
     When Click ministerios
     When Escribir ministerio
-    Then Click boton buscar
+    Then Click boton buscar ministerio
       Examples:
 
         | user | clave |

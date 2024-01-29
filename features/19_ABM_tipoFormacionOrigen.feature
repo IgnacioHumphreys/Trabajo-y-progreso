@@ -8,15 +8,14 @@ Feature: ABM tipo de Formacion Web
     Then Click boton ingresar
     #HASTA ACA INICIO DE SESION
     When Click educacion
-    When Click tipos de formacion web
+    When Click tipos de formacion origen
     When Click boton crear
-    When Completar nombre tipo de formacion web
-    When Seleccionar color etiqueta
-    Then Click boton guardar formacionWeb
+    When Completar nombre tipo de formacion origen
+    When Seleccionar tipo formacion web
+    Then Click boton guardar formacion origen
     When Click icono "editar"
     When Modificar nombre tipo de formacion web
-    When Modificar color etiqueta
-    Then Click boton guardar formacionWeb
+    Then Click boton guardar formacion origen
     When Click icono "tachito"
     Then Click boton eliminar
       Examples:

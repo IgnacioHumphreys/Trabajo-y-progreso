@@ -6,6 +6,6 @@ def step_impl(context):
     buscar_ministerio.escribir_ministerio(context)
 
 
-@then(u'Click boton buscar')
+@then(u'Click boton buscar ministerio')
 def step_impl(context):
     buscar_ministerio.click_buscar(context)

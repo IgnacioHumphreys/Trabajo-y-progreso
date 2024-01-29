@@ -7,10 +7,10 @@ Feature: Buscar grupos
     When Completar credenciales de inicio de sesion
     Then Click boton ingresar
     #HASTA ACA INICIO DE SESION
-    When Click configuracion
-    When Click grupos
-    When Escribir grupo
-    Then Click boton buscar grupo
+    When Click educacion
+    When Click tipos de formacion web
+    When Escribir formacion web
+    Then Click boton buscar formacion web
       Examples:
 
         | user | clave |

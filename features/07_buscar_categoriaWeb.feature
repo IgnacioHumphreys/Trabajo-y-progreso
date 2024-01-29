@@ -10,7 +10,7 @@ Feature: Buscar categoriaWeb
     When Click configuracion
     When Click categoriasWeb
     When Escribir categoriaWeb
-    Then Click boton buscar
+    Then Click boton buscar categoriaWeb
       Examples:
 
         | user | clave |

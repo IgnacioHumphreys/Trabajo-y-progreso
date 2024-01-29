@@ -13,7 +13,7 @@ Feature: Buscar programa
     When Escribir nombre programa
     When Seleccionar ministerio en programa
     When Seleccionar reparticion
-    Then Click boton buscar
+    Then Click boton buscar programa
       Examples:
 
         | user | clave |

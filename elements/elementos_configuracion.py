@@ -79,3 +79,19 @@ btn_switch = "(//div[@class='custom-control custom-switch']//label)[1]"
 select_capacitacion1 = "customCheck2"
 select_capacitacion2 = "customCheck4"
 btn_publicar = "//div[@class='card mb-5']/following-sibling::button[1]"
+############################ TEST 16 BUSCAR GRUPOS ############################
+############################ TEST 17 ABM TIPO FORMACION WEB ############################
+btn_educacion = "//div[@class='d-flex show']//span[1]"
+btn_tiposFormacionWeb = "(//div[@id='educacionCollapse']//a)[2]"
+input_formacionWeb = "//div[contains(@class,'col-12 col-md-6')]//input[1]"
+box_colorEtiqueta = "//div[@class='filter-option-inner']//div[1]"
+select_verde = "//a[@id='bs-select-1-2']//span[1]"
+select_rojo = "//a[@id='bs-select-1-4']/span[1]"
+btn_guardar_formacionWeb = "(//form[@name='tipo_formacion_web']//button)[2]"
+############################ TEST 18 BUSCAR TIPO FORMACION WEB ############################
+############################ TEST 19 ABM TIPO FORMACION ORIGEN ############################
+btn_tiposFormacionOrigen = "//div[@id='educacionCollapse']//a[1]"
+input_formacionOrigen = "(//div[contains(@class,'col-md-6 col-xl-4')]//input)[1]"
+box_formacionWeb = "//div[@class='filter-option-inner']//div[1]"
+select_automatizacion_formacionWeb = "//a[@id='bs-select-1-15']/span[1]"
+btn_guardar_formacionOrigen = "(//form[@name='tipo_formacion_origen']//button)[2]"

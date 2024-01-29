@@ -20,3 +20,14 @@ class buscar_programa(funciones_TyP):
         funciones_TyP.click_Field(self, By.XPATH, box3_ministerio)
         funciones_TyP.scrollToElement(self, By.XPATH, select_automatizaion_en_programa)
         funciones_TyP.click_Field(self, By.XPATH, select_automatizaion_en_programa)
+
+    def click_buscar(self):
+        funciones_TyP.click_Field(self, By.XPATH, btn_buscar)
+        programa_automatizacion = self.driver.find_element(self, By.XPATH,
+                                                                  "(//table[@class='table table-hover']//p)[1]")
+        if programa_automatizacion is True:
+            funciones_TyP.screenShot(self, "pantalla esperada")
+            print("** valido el step: Click boton buscar programa **")
+        else:
+            print("** hay un fallo en el step: Click boton buscar programa **")
+            assert False, "** hay un fallo en el step: Click boton buscar programa **"

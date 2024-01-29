@@ -14,3 +14,8 @@ def step_impl(context):
 @when(u'Seleccionar ministerio en programa')
 def step_impl(context):
     buscar_programa.seleccionar_ministerio_en_programa(context)
+
+
+@then(u'Click boton buscar programa')
+def step_impl(context):
+    buscar_programa.click_buscar(context)

@@ -10,7 +10,7 @@ Feature: Buscar reparticion
     When Click configuracion
     When Click reparticiones
     When Escribir reparticion
-    Then Click boton buscar
+    Then Click boton buscar reparticion
       Examples:
 
         | user | clave |

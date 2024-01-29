@@ -10,8 +10,8 @@ Feature: Buscar categoriaOrigen
     When Click configuracion
     When Click categoriasOrigen
     When Escribir categoriaOrigen
-    When Escribir categoriaWeb en CategoriasOrigene
-    Then Click boton buscar
+    When Escribir categoriaWeb en CategoriasOrigen
+    Then Click boton buscar categoriaOrigen
       Examples:
 
         | user | clave |
