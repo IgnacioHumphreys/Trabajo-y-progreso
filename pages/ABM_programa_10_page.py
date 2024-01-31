@@ -1,7 +1,7 @@
 import time
 from selenium.webdriver.common.by import By
 from Funciones.funciones_TyP import funciones_TyP
-from elements.elementos_configuracion import *
+from elements.elementos_back import *
 
 t = 1
 
@@ -44,15 +44,17 @@ class ABM_programa(funciones_TyP):
     def com_fecha_inscripcion(self):
         funciones_TyP.input_Texto(self, By.XPATH, input_fecha_inscripcion, "18/06")
 
-    def click_guardar_programa(self):
+    '''def click_guardar_programa(self):
         funciones_TyP.click_Field(self, By.XPATH, btn_guardar_programa)
+        time.sleep(t)
         title_guardar_programa = self.driver.find_element(self, By.XPATH, "(//div[@class='alert alert-success']//div)[2]")
         if title_guardar_programa is True:
             funciones_TyP.screenShot(self, "pantalla esperada")
             print("** valido el step: Click boton guardar programa **")
+            funciones_TyP.validates_visibility(self, By.XPATH, "(//table[@class='table table-hover']//p)[2]")
         else:
             print("** hay un fallo en el step: Click boton guardar programa **")
-            assert False, "** hay un fallo en el step: Click boton guardar programa **"
+            assert False, "** hay un fallo en el step: Click boton guardar programa **"'''
 
     def mod_cod_programa(self):
         funciones_TyP.input_Texto(self, By.XPATH, input_cod_programa, "2312")

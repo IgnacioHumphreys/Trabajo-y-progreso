@@ -1,7 +1,7 @@
 import time
 from selenium.webdriver.common.by import By
 from Funciones.funciones_TyP import funciones_TyP
-from elements.elementos_configuracion import *
+from elements.elementos_back import *
 
 t = 1
 
@@ -11,7 +11,7 @@ class ABM_ministerio(funciones_TyP):
         super().__init__(driver)
 
     def click_config(self):
-        funciones_TyP.click_Field(self, By.XPATH, btn_configuracion)
+        funciones_TyP.click_Field(self, By.XPATH, btn_ministerios)
         time.sleep(t)
         if btn_ministerios is True:
             funciones_TyP.screenShot(self, "pantalla esperada")
@@ -44,18 +44,20 @@ class ABM_ministerio(funciones_TyP):
             assert False, "** hay un fallo en el step: Click boton crear **"
 
     def comp_nom_ministerio(self):
-        funciones_TyP.input_Texto(self, By.XPATH, input_nom_ministerio, "MDT2")
+        funciones_TyP.input_Texto(self, By.XPATH, input_ministerio, "MDT2")
         time.sleep(t)
 
     def click_guardar(self):
         funciones_TyP.click_Field(self, By.XPATH, btn_guardar)
-        ministerio_creado = self.driver.find_element(self, By.XPATH,"(//div[@class='alert alert-success']//div)[2]")
-        if ministerio_creado is True:
+        time.sleep(t)
+        title_guardado = self.driver.find_element(self, By.XPATH,"(//div[@class='alert alert-success']//div)[2]")
+        if title_guardado is True:
             funciones_TyP.screenShot(self, "pantalla esperada")
-            print("** valido el step: Click boton guardar **")
+            print("** valido el step: Click boton guardar ministerio **")
+            funciones_TyP.validates_visibility(self, By.XPATH, "(//table[@class='table table-hover']//p)[1]")
         else:
-            print("** hay un fallo en el step: Click boton guardar **")
-            assert False, "** hay un fallo en el step: Click boton guardar **"
+            print("** hay un fallo en el step: Click boton guardar**")
+            assert False, "** hay un fallo en el step: Click boton guardar**"
 
     def click_editar(self):
         funciones_TyP.click_Field(self, By.XPATH, btn_editar)
@@ -68,17 +70,7 @@ class ABM_ministerio(funciones_TyP):
             assert False, "** hay un fallo en el step: Click icono editar **"
 
     def mod_nom_ministerio(self):
-        funciones_TyP.input_Texto(self, By.XPATH, input_nom_ministerio, "MDT2 (automatizacion)")
-
-    def click_guardar_min(self):
-        funciones_TyP.click_Field(self, By.XPATH, btn_guardar)
-        ministerio_editado = self.driver.find_element(self, By.XPATH, "((//div[@class='alert alert-success']//div)[2]")
-        if ministerio_editado is True:
-            funciones_TyP.screenShot(self, "pantalla esperada")
-            print("** valido el step: Click boton guardar ministerio **")
-        else:
-            print("** hay un fallo en el step: Click boton guardar ministerio **")
-            assert False, "** hay un fallo en el step: Click boton guardar ministerio **"
+        funciones_TyP.input_Texto(self, By.XPATH, input_ministerio, "MDT2 (automatizacion)")
 
     def click_tachito(self):
         funciones_TyP.click_Field(self, By.XPATH, btn_tachito)

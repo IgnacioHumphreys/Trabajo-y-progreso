@@ -12,13 +12,13 @@ Feature: ABM categoriaWeb
     When Click boton crear
     When Completar nombre categoriaWeb
     When Subir archivo (imagen)
-    Then Click boton guardar categoriaWeb
+    Then Click boton guardar
     When Click icono "editar"
     When Modificar nombre categoriaWeb
-    Then Click boton guardar categoriaWeb
+    Then Click boton guardar
     When Click icono "tachito"
     Then Click boton eliminar
       Examples:
 
-        | user | clave |
-        | test | Gobi  |
+        | user        | clave    |
+        | 27165286796 | Troquel1 |

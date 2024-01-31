@@ -1,7 +1,7 @@
 import time
 from selenium.webdriver.common.by import By
 from Funciones.funciones_TyP import funciones_TyP
-from elements.elementos_configuracion import *
+from elements.elementos_back import *
 
 t = 1
 

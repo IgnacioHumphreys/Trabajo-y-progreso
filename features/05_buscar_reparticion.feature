@@ -13,5 +13,5 @@ Feature: Buscar reparticion
     Then Click boton buscar reparticion
       Examples:
 
-        | user | clave |
-        | test | Gobi  |
+        | user        | clave    |
+        | 27165286796 | Troquel1 |

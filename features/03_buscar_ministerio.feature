@@ -13,5 +13,5 @@ Feature: Buscar ministerio
     Then Click boton buscar ministerio
       Examples:
 
-        | user | clave |
-        | test | Gobi  |
+        | user        | clave    |
+        | 27165286796 | Troquel1 |

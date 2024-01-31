@@ -4,7 +4,7 @@ https://www.skill2lead.com/allure-report/allure-report-behave-allure-report-conf
 
 1- para crear el feature. Comando: behave features
 
-behave -i "nombre_feature".feature --format=allure_behave.formatter:AllureFormatter -o reports/
+behave ./feature/"nombre del feature" --format=allure_behave.formatter:AllureFormatter -o reports/
 
 2- behave -f allure_behave.formatter:AllureFormatter -o reports/  (se utiliza para ejecutar la prueba, )
 

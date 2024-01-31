@@ -1,7 +1,7 @@
 import time
 from selenium.webdriver.common.by import By
 from Funciones.funciones_TyP import funciones_TyP
-from elements.elementos_configuracion import *
+from elements.elementos_back import *
 
 t = 1
 
@@ -23,7 +23,7 @@ class ABM_grupos(funciones_TyP):
     def com_nom_grupo(self):
         funciones_TyP.input_Texto(self, By.XPATH, input_grupo, "Cursos faciles")
 
-    def activar_switch(self):
+    def click_switch(self):
         funciones_TyP.click_Field(self, By.XPATH, btn_switch)
 
     def select_capacitaciones(self):
@@ -35,10 +35,26 @@ class ABM_grupos(funciones_TyP):
     def click_publicar(self):
         funciones_TyP.scrollToElement(self, By.XPATH, btn_publicar)
         funciones_TyP.click_Field(self, By.XPATH, btn_publicar)
-        title_grupos_publicado = self.driver.find_element(self, By.XPATH, "(//div[@class='alert alert-success']//div)[2]")
+        title_grupos_publicado = self.driver.find_element(self, By.XPATH,
+                                            "(//div[@class='alert alert-success']//div)[2]")
         if title_grupos_publicado is True:
             funciones_TyP.screenShot(self, "pantalla esperada")
             print("** valido el step: Click boton publicar **")
         else:
             print("** hay un fallo en el step: Click boton publicar **")
             assert False, "** hay un fallo en el step: Click boton publicar **"
+
+    def mod_nom_grupo(self):
+        funciones_TyP.input_Texto(self, By.XPATH, input_grupo, "Cursos promedio")
+
+    '''def click_guardar_grupo(self):
+        funciones_TyP.scrollToElement(self, By.XPATH, btn_guardar)
+        funciones_TyP.click_Field(self, By.XPATH, btn_guardar)
+        title_grupo_editado = self.driver.find_element(self, By.XPATH,
+                                            "(//div[@class='container-fluid content']//div)[1]")
+        if title_grupo_editado is True:
+            funciones_TyP.screenShot(self, "pantalla esperada")
+            print("** valido el step: Click boton guardar grupo **")
+        else:
+            print("** hay un fallo en el step: Click boton guardar grupo **")
+            assert False, "** hay un fallo en el step: Click boton guardar grupo **"'''

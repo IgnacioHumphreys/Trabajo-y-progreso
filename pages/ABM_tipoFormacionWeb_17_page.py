@@ -1,7 +1,7 @@
 import time
 from selenium.webdriver.common.by import By
 from Funciones.funciones_TyP import funciones_TyP
-from elements.elementos_configuracion import *
+from elements.elementos_back import *
 
 t = 1
 
@@ -38,7 +38,7 @@ class ABM_tipoFormacionWeb(funciones_TyP):
         funciones_TyP.scrollToElement(self, By.XPATH, select_verde)
         funciones_TyP.click_Field(self, By.XPATH, select_verde)
 
-    def click_guardar_formacionWeb(self):
+    '''def click_guardar_formacionWeb(self):
         funciones_TyP.click_Field(self, By.XPATH, btn_guardar_formacionWeb)
         title_guardar_formacionWeb = self.driver.find_element(self, By.XPATH, "(//div[@class='alert alert-success']//div)[2]")
         if title_guardar_formacionWeb is True:
@@ -46,7 +46,7 @@ class ABM_tipoFormacionWeb(funciones_TyP):
             print("** valido el step: Click boton guardar formacion web **")
         else:
             print("** hay un fallo en el step: Click boton guardar formacion web **")
-            assert False, "** hay un fallo en el step: Click boton guardar formacion web **"
+            assert False, "** hay un fallo en el step: Click boton guardar formacion web **"'''
 
     def mod_nom_formacionWeb(self):
         funciones_TyP.input_Texto(self, By.XPATH, input_formacionWeb, "Cursos 3")

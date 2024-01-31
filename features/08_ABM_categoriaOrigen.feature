@@ -13,14 +13,14 @@ Feature: ABM categoriasOrigen
     When Completar nombre categoriaOrigen
     When Seleccionar tipo
     When Asociar categoriaWeb
-    Then Click boton guardar categoriaOrigen
+    Then Click boton guardar
     When Click icono "editar"
     When Modificar nombre cateogriaOrigen
     When Modificar tipo
-    Then Click boton guardar categoriaOrigen
+    Then Click boton guardar
     When Click icono "tachito"
     Then Click boton eliminar
       Examples:
 
-        | user | clave |
-        | test | Gobi  |
+        | user        | clave    |
+        | 27165286796 | Troquel1 |

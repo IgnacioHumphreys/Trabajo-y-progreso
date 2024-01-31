@@ -36,11 +36,6 @@ def step_impl(context):
     ABM_programa.com_fecha_inscripcion(context)
 
 
-@then(u'Click boton guardar programa')
-def step_impl(context):
-    ABM_programa.click_guardar_programa(context)
-
-
 @when(u'Modificar codigo programa')
 def step_impl(context):
     ABM_programa.mod_cod_programa(context)

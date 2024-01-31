@@ -16,15 +16,6 @@ def step_impl(context):
     ABM_reparticion.asociar_ministerio(context)
 
 
-@then(u'Click boton guardar reparticion')
-def step_impl(context):
-    ABM_reparticion.click_guardar_reparticion(context)
-
-
 @when(u'Modificar nombre reparticion')
 def step_impl(context):
     ABM_reparticion.mod_nom_reparticion(context)
-
-@then(u'Click boton guardar reparticion editada')
-def step_impl(context):
-    ABM_reparticion.click_guardar_reparticion_editada(context)

@@ -16,11 +16,6 @@ def step_impl(context):
     ABM_categoriaWeb.subirArchivo(context)
 
 
-@then(u'Click boton guardar categoriaWeb')
-def step_impl(context):
-    ABM_categoriaWeb.click_guardar_categoriWeb(context)
-
-
 @when(u'Modificar nombre categoriaWeb')
 def step_impl(context):
     ABM_categoriaWeb.mod_nom_categoriaWeb(context)

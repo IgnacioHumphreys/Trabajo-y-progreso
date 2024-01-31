@@ -1,7 +1,7 @@
 import time
 from selenium.webdriver.common.by import By
 from Funciones.funciones_TyP import funciones_TyP
-from elements.elementos_configuracion import *
+from elements.elementos_back import *
 
 t = 1
 
@@ -23,15 +23,16 @@ class ABM_aptitudes(funciones_TyP):
     def com_nom_aptutud(self):
         funciones_TyP.input_Texto(self, By.XPATH, input_aptitud, "Ingenio")
 
-    def click_guardar_aptitud(self):
-        funciones_TyP.click_Field(self, By.XPATH, btn_guardar_aptitud)
+    '''def click_guardar_aptitud(self):
+        funciones_TyP.click_Field(self, By.XPATH, btn_guardar)
         title_guardar_aptitud = self.driver.find_element(self, By.XPATH, "(//div[@class='alert alert-success']//div)[2]")
         if title_guardar_aptitud is True:
             funciones_TyP.screenShot(self, "pantalla esperada")
             print("** valido el step: Click boton guardar aptitud **")
+            funciones_TyP.validates_visibility(self, By.XPATH, "(//table[@class='table table-hover']//p)[1]")
         else:
             print("** hay un fallo en el step: Click boton guardar aptitud **")
-            assert False, "** hay un fallo en el step: Click boton guardar aptitud **"
+            assert False, "** hay un fallo en el step: Click boton guardar aptitud **"'''
 
     def mod_nom_aptitud(self):
         funciones_TyP.input_Texto(self, By.XPATH, input_aptitud, "Ingenio 2")

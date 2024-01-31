@@ -14,5 +14,5 @@ Feature: Buscar categoriaOrigen
     Then Click boton buscar categoriaOrigen
       Examples:
 
-        | user | clave |
-        | test | Gobi  |
+        | user        | clave    |
+        | 27165286796 | Troquel1 |

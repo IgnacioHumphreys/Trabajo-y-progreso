@@ -16,11 +16,6 @@ def step_impl(context):
     ABM_tipoFormacionOrigen.select_formacionWeb(context)
 
 
-@then(u'Click boton guardar formacion origen')
-def step_impl(context):
-    ABM_tipoFormacionOrigen.click_guardar_formacionOrigen(context)
-
-
-@when(u'Modificar nombre tipo de formacion web')
+@when(u'Modificar nombre tipo de formacion origen')
 def step_impl(context):
     ABM_tipoFormacionOrigen.mod_nom_formacionOrigen(context)

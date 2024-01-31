@@ -12,14 +12,14 @@ Feature: ABM tipo de Formacion Web
     When Click boton crear
     When Completar nombre tipo de formacion web
     When Seleccionar color etiqueta
-    Then Click boton guardar formacionWeb
+    Then Click boton guardar
     When Click icono "editar"
     When Modificar nombre tipo de formacion web
     When Modificar color etiqueta
-    Then Click boton guardar formacionWeb
+    Then Click boton guardar
     When Click icono "tachito"
     Then Click boton eliminar
       Examples:
 
-        | user | clave |
-        | test | Gobi  |
+        | user        | clave    |
+        | 27165286796 | Troquel1 |

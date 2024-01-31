@@ -1,7 +1,7 @@
 import time
 from selenium.webdriver.common.by import By
 from Funciones.funciones_TyP import funciones_TyP
-from elements.elementos_configuracion import *
+from elements.elementos_back import *
 
 t = 1
 
@@ -29,16 +29,18 @@ class ABM_categoriaWeb(funciones_TyP):
                         'C:\\Users\\ignac\\Documents\\Automatizaciones_ASI\\trabajo_y_progreso\\IMG\\ceros_y_unos.jpg')
         time.sleep(t)
 
-    def click_guardar_categoriWeb(self):
-        funciones_TyP.click_Field(self, By.XPATH, btn_guardar_categoriaWeb)
-        title_guardar_categoriasWeb = self.driver.find_element(self, By.XPATH,
+    '''def click_guardar_categoriaWeb(self):
+        funciones_TyP.click_Field(self, By.XPATH, btn_guardar)
+        time.sleep(t)
+        title_guardar_categoriaWeb = self.driver.find_element(self, By.XPATH,
                                         "(//div[@class='alert alert-success']//div)[2]")
-        if title_guardar_categoriasWeb is True:
+        if title_guardar_categoriaWeb is True:
             funciones_TyP.screenShot(self, "pantalla esperada")
             print("** valido el step: Click boton guardar categoriasWeb **")
+            funciones_TyP.validates_visibility(self, By.XPATH, "(//table[@class='table table-hover']//p)[1]")
         else:
             print("** hay un fallo en el step: Click boton guardar categoriasWeb **")
-            assert False, "** hay un fallo en el step: Click boton guardar categoriasWeb **"
+            assert False, "** hay un fallo en el step: Click boton guardar categoriasWeb **"'''
 
     def mod_nom_categoriaWeb(self):
         funciones_TyP.input_Texto(self, By.XPATH, input_categoriaWeb, "Computacion 2")

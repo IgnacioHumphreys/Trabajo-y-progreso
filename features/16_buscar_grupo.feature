@@ -13,5 +13,5 @@ Feature: Buscar grupos
     Then Click boton buscar grupo
       Examples:
 
-        | user | clave |
-        | test | Gobi  |
+        | user        | clave    |
+        | 27165286796 | Troquel1 |

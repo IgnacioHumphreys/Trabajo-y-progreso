@@ -16,14 +16,14 @@ Feature: ABM preguntasFrecuentes
     When Seleccionar capacitacion
     When Completar pregunta
     When Completar respuesta
-    Then Click boton guardar preguntas frecuentes
+    Then Click boton guardar
     When Click icono "editar" preguntas frecuentes
     When Modificar pregunta
     When Modificar respuesta
-    Then Click boton guardar preguntas frecuentes
+    Then Click boton guardar
     When Click icono "tachito" preguntas frecuentes
     Then Click boton eliminar preguntas frecuentes
       Examples:
 
-        | user | clave |
-        | test | Gobi  |
+        | user        | clave    |
+        | 27165286796 | Troquel1 |

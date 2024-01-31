@@ -36,11 +36,6 @@ def step_impl(context):
     ABM_ministerio.mod_nom_ministerio(context)
 
 
-@then(u'Click boton guardar ministerio')
-def step_impl(context):
-    ABM_ministerio.click_guardar_min(context)
-
-
 @when(u'Click icono "tachito"')
 def step_impl(context):
     ABM_ministerio.click_tachito(context)

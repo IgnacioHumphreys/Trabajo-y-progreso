@@ -31,11 +31,6 @@ def step_impl(context):
     ABM_pregunta_frecuente.com_respuesta(context)
 
 
-@then(u'Click boton guardar preguntas frecuentes')
-def step_impl(context):
-    ABM_pregunta_frecuente.click_guardar_preguntaFrecuente(context)
-
-
 @when(u'Click icono "editar" preguntas frecuentes')
 def step_impl(context):
     ABM_pregunta_frecuente.click_editar_preguntasFrecuentes(context)

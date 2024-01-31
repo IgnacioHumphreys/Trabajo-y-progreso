@@ -14,10 +14,10 @@ Feature: ABM ministerio
     Then Click boton guardar
     When Click icono "editar"
     When Modificar nombre ministerio
-    Then Click boton guardar ministerio
+    Then Click boton guardar
     When Click icono "tachito"
     Then Click boton eliminar
       Examples:
 
-        | user | clave |
-        | test | Gobi  |
+        | user        | clave    |
+        | 27165286796 | Troquel1 |

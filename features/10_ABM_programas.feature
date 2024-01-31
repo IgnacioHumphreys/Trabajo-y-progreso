@@ -16,15 +16,15 @@ Feature: ABM programa
     When Seleccionar reparticion
     When Completar duracion estimada
     When Completar fecha de inscripcion estimada
-    Then Click boton guardar programa
+    Then Click boton guardar
     When Click icono "editar"
     When Modificar codigo programa
     When Modificar nombre programa
     When Modificar fecha de inscripcion
-    Then Click boton guardar programa
+    Then Click boton guardar
     When Click icono "tachito"
     Then Click boton eliminar
       Examples:
 
-        | user | clave |
-        | test | Gobi  |
+        | user        | clave    |
+        | 27165286796 | Troquel1 |

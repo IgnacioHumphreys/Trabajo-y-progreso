@@ -8,5 +8,5 @@ Feature: Iniciar sesion en Back de portal de oportunidades
     Then Click boton ingresar
       Examples:
 
-        | user | clave |
-        | test | Gobi  |
+        | user        | clave    |
+        | 27165286796 | Troquel1 |

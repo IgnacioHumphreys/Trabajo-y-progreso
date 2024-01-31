@@ -11,13 +11,13 @@ Feature: ABM aptitudes
     When Click aptitudes
     When Click boton crear
     When Completar nombre aptitud
-    Then Click boton guardar aptitud
+    Then Click boton guardar
     When Click icono "editar"
     When Modificar nombre aptitud
-    Then Click boton guardar aptitud
+    Then Click boton guardar
     When Click icono "tachito"
     Then Click boton eliminar
       Examples:
 
-        | user | clave |
-        | test | Gobi  |
+        | user        | clave    |
+        | 27165286796 | Troquel1 |

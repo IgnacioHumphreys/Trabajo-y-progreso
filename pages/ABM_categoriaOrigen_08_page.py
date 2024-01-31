@@ -1,7 +1,7 @@
 import time
 from selenium.webdriver.common.by import By
 from Funciones.funciones_TyP import funciones_TyP
-from elements.elementos_configuracion import *
+from elements.elementos_back import *
 
 t = 1
 
@@ -34,16 +34,18 @@ class ABM_categoriaOrigen(funciones_TyP):
         time.sleep(t)
         funciones_TyP.click_Field(self, By.XPATH, select_categoriaWebAuto)
 
-    def click_guardar_categoriaOrigen(self):
-        funciones_TyP.click_Field(self, By.XPATH, btn_guardar_categoriaOrigen)
+    '''def click_guardar_categoriaOrigen(self):
+        funciones_TyP.click_Field(self, By.XPATH, btn_guardar)
+        time.sleep(t)
         title_guardar_categoriaOrigen = self.driver.find_element(self, By.XPATH,
                                                           "(//div[@class='alert alert-success']//div)[2]")
         if title_guardar_categoriaOrigen is True:
             funciones_TyP.screenShot(self, "pantalla esperada")
             print("** valido el step: Click boton guardar categoriaOrigen **")
+            funciones_TyP.validates_visibility(self, By.XPATH, "(//table[@class='table table-hover']//p)[1]")
         else:
             print("** hay un fallo en el step: Click boton guardar categoriaOrigen **")
-            assert False, "** hay un fallo en el step: Click boton guardar categoriaOrigen **"
+            assert False, "** hay un fallo en el step: Click boton guardar categoriaOrigen **"'''
 
     def mod_nom_categoriaOrigen(self):
         funciones_TyP.input_Texto(self, By.XPATH, input_categoriaOrigen, "Categoria 2")

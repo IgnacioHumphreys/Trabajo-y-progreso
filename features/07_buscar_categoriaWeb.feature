@@ -13,5 +13,5 @@ Feature: Buscar categoriaWeb
     Then Click boton buscar categoriaWeb
       Examples:
 
-        | user | clave |
-        | test | Gobi  |
+        | user        | clave    |
+        | 27165286796 | Troquel1 |

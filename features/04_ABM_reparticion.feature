@@ -12,13 +12,13 @@ Feature: ABM reparticion
     When Click boton crear
     When Completar nombre reparticion
     When Asociar ministerio
-    Then Click boton guardar reparticion
+    Then Click boton guardar
     When Click icono "editar"
     When Modificar nombre reparticion
-    Then Click boton guardar reparticion editada
+    Then Click boton guardar
     When Click icono "tachito"
     Then Click boton eliminar
       Examples:
 
-        | user | clave |
-        | test | Gobi  |
+        | user        | clave    |
+        | 27165286796 | Troquel1 |

@@ -22,11 +22,6 @@ def step_impl(context):
     ABM_tipoFormacionWeb.select_color(context)
 
 
-@then(u'Click boton guardar formacionWeb')
-def step_impl(context):
-    ABM_tipoFormacionWeb.click_guardar_formacionWeb(context)
-
-
 @when(u'Modificar nombre tipo de formacion web')
 def step_impl(context):
     ABM_tipoFormacionWeb.mod_nom_formacionWeb(context)

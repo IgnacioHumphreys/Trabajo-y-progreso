@@ -1,7 +1,7 @@
 import time
 from selenium.webdriver.common.by import By
 from Funciones.funciones_TyP import funciones_TyP
-from elements.elementos_configuracion import *
+from elements.elementos_back import *
 
 t = 1
 
@@ -42,16 +42,18 @@ class ABM_pregunta_frecuente(funciones_TyP):
     def com_respuesta(self):
         funciones_TyP.input_Texto(self, By.XPATH, input_respuesta, "Ninguno")
 
-    def click_guardar_preguntaFrecuente(self):
-        funciones_TyP.click_Field(self, By.XPATH, btn_guardar_preguntaFrecuente)
+    '''def click_guardar_preguntaFrecuente(self):
+        funciones_TyP.click_Field(self, By.XPATH, btn_guardar)
         title_guardar_preguntasFrecuentes = self.driver.find_element(self, By.XPATH,
                                                             "(//div[@class='alert alert-success']//div)[2]")
         if title_guardar_preguntasFrecuentes is True:
             funciones_TyP.screenShot(self, "pantalla esperada")
             print("** valido el step: Click boton guardar preguntas frecuentes **")
+            funciones_TyP.validates_visibility(self, By.XPATH, "//h5[text()='Cuales son los requerimientos?']")
         else:
             print("** hay un fallo en el step: Click boton guardar preguntas frecuentes **")
-            assert False, "** hay un fallo en el step: Click boton guardar preguntas frecuentes **"
+            assert False, "** hay un fallo en el step: Click boton guardar preguntas frecuentes **"'''
+
 
     def click_editar_preguntasFrecuentes(self):
         funciones_TyP.click_Field(self, By.XPATH, btn_editar_preguntasFrecuentes)

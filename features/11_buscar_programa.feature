@@ -16,5 +16,5 @@ Feature: Buscar programa
     Then Click boton buscar programa
       Examples:
 
-        | user | clave |
-        | test | Gobi  |
+        | user        | clave    |
+        | 27165286796 | Troquel1 |
