@@ -16,7 +16,7 @@ def step_impl(context):
     ABM_categoriaOrigen.seleccionar_tipo(context)
 
 
-@when(u'Asociar categoriaOrigen')
+@when(u'Asociar categoriaWeb')
 def step_impl(context):
     ABM_categoriaOrigen.asociar_categoriaWeb(context)
 

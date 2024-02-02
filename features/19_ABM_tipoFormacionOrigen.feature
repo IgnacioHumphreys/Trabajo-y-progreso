@@ -6,7 +6,7 @@ Feature: ABM tipo de Formacion Origen
     When Validar logo pagina
     When Completar credenciales de inicio de sesion
     Then Click boton ingresar
-    #HASTA ACA INICIO DE SESION
+    #HASTA ACA INICIO DE SESION EN EL BACK
     When Click educacion
     When Click tipos de formacion origen
     When Click boton crear

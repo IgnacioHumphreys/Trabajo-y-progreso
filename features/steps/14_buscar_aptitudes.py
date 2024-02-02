@@ -6,6 +6,6 @@ def step_impl(context):
     buscar_aptitud.escribir_aptitud(context)
 
 
-@then(u'Click boton buscar aptitud')
+@then(u'Click boton buscar aptitud y validar')
 def step_impl(context):
     buscar_aptitud.click_buscar(context)

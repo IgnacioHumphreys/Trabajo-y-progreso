@@ -13,7 +13,7 @@ class ABM_tipoFormacionWeb(funciones_TyP):
     def click_educacion(self):
         funciones_TyP.click_Field(self, By.XPATH, btn_educacion)
         btn_tiposFormacionWeb = self.driver.find_element(self, By.XPATH, "(//div[@id='educacionCollapse']//a)[2]")
-        if btn_tiposFormacionWeb is True:
+        if btn_tiposFormacionWeb.is_displayed():
             funciones_TyP.screenShot(self, "pantalla esperada")
             print("** valido el step: Click educacion **")
         else:
@@ -23,7 +23,7 @@ class ABM_tipoFormacionWeb(funciones_TyP):
     def click_tiposFormacionWeb(self):
         funciones_TyP.click_Field(self, By.XPATH, btn_tiposFormacionWeb)
         title_tiposFormacionWeb = self.driver.find_element(self, By.XPATH, "//div[@class='col']//h1[1]")
-        if title_tiposFormacionWeb is True:
+        if title_tiposFormacionWeb.is_displayed():
             funciones_TyP.screenShot(self, "pantalla esperada")
             print("** valido el step: Click tipos formacion web **")
         else:
@@ -41,7 +41,7 @@ class ABM_tipoFormacionWeb(funciones_TyP):
     '''def click_guardar_formacionWeb(self):
         funciones_TyP.click_Field(self, By.XPATH, btn_guardar_formacionWeb)
         title_guardar_formacionWeb = self.driver.find_element(self, By.XPATH, "(//div[@class='alert alert-success']//div)[2]")
-        if title_guardar_formacionWeb is True:
+        if title_guardar_formacionWeb.is_displayed():
             funciones_TyP.screenShot(self, "pantalla esperada")
             print("** valido el step: Click boton guardar formacion web **")
         else:

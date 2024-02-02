@@ -6,6 +6,6 @@ def step_impl(context):
     buscar_formacionWeb.escribir_formacionWeb(context)
 
 
-@then(u'Click boton buscar formacion web')
+@then(u'Click boton buscar formacion web y validar')
 def step_impl(context):
     buscar_formacionWeb.click_buscar(context)

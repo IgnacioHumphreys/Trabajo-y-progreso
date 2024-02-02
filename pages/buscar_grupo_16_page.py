@@ -15,10 +15,12 @@ class buscar_grupo(funciones_TyP):
 
     def click_buscar(self):
         funciones_TyP.click_Field(self, By.XPATH, btn_buscar)
-        cursos_cortos = self.driver.find_element(self, By.XPATH, "(//tr[@data-id='2']//p)[1]")
-        if cursos_cortos is True:
-            funciones_TyP.screenShot(self, "pantalla esperada")
-            print("** valido el step: Click boton buscar grupo **")
+        time.sleep(t)
+        nombre = "//p[text()='curso prueba']"
+        curso_buscado = self.driver.find_element(self, By.XPATH, "//p[text()='curso prueba']")
+        if curso_buscado == nombre:
+            funciones_TyP.screenShot(self, "Se visualiza el grupo buscado")
+            print("** valido el step: Click boton buscar grupo y visualizar **")
         else:
-            print("** hay un fallo en el step: Click boton buscar grupo **")
-            assert False, "** hay un fallo en el step: Click boton buscar grupo **"
+            print("** hay un fallo en el step: Click boton buscar grupo y visualizar **")
+            assert False, "** hay un fallo en el step: Click boton buscar grupo y visualizar **"

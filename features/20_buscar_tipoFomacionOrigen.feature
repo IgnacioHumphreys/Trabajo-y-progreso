@@ -6,11 +6,11 @@ Feature: Buscar tipo Formacion Origen
     When Validar logo pagina
     When Completar credenciales de inicio de sesion
     Then Click boton ingresar
-    #HASTA ACA INICIO DE SESION
+    #HASTA ACA INICIO DE SESION EN EL BACK
     When Click educacion
     When Click tipos de formacion origen
     When Escribir formacion origen
-    Then Click boton buscar formacion origen
+    And Click boton buscar formacion origen y validar
       Examples:
 
         | user        | clave    |

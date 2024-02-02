@@ -1,22 +1,19 @@
-Feature: ABM aptitudes
+Feature: Alta capacitacion
   Background:
     Given Ingreso al portal de oportunidades
 
-  Scenario Outline: 13 Validar la creacion de una aptitud y que permita editar y eliminar
+  Scenario Outline: 23 Verificar la creacion (en borrador) de la capacitacion
     When Validar logo pagina
     When Completar credenciales de inicio de sesion
     Then Click boton ingresar
     #HASTA ACA INICIO DE SESION EN EL BACK
-    When Click configuracion
-    When Click aptitudes
+    When Click educacion
+    When Click capacitaciones
     When Click boton crear
-    When Completar nombre aptitud
-    Then Click boton guardar
+    When Completar todos los campos
+    And  Click guardar como borrador y validar
     When Click icono "editar"
-    When Modificar nombre aptitud
-    Then Click boton guardar
-    When Click icono "tachito"
-    Then Click boton eliminar
+    Then Click boton cargar
       Examples:
 
         | user        | clave    |

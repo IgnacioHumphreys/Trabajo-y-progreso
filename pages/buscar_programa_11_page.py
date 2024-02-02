@@ -23,11 +23,14 @@ class buscar_programa(funciones_TyP):
 
     def click_buscar(self):
         funciones_TyP.click_Field(self, By.XPATH, btn_buscar)
-        programa_automatizacion = self.driver.find_element(self, By.XPATH,
-                                                                  "(//table[@class='table table-hover']//p)[1]")
-        if programa_automatizacion is True:
-            funciones_TyP.screenShot(self, "pantalla esperada")
-            print("** valido el step: Click boton buscar programa **")
+        time.sleep(t)
+        texto_comparativo = "2310"
+        programa_buscado = self.driver.find_element(By.XPATH, "//p[text()='2310']")
+        texto = programa_buscado.text
+        if texto == texto_comparativo:
+            funciones_TyP.screenShot(self, "Se visualiza el programa buscado")
+            print("** valido el step: Click boton buscar programa y validar **")
         else:
-            print("** hay un fallo en el step: Click boton buscar programa **")
-            assert False, "** hay un fallo en el step: Click boton buscar programa **"
+            self.driver.quit()
+            print("** hay un fallo en el step: Click boton buscar programa y validar **")
+            assert False, "** hay un fallo en el step: Click boton buscar programa y validar **"

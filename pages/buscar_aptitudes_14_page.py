@@ -15,11 +15,14 @@ class buscar_aptitud(funciones_TyP):
 
     def click_buscar(self):
         funciones_TyP.click_Field(self, By.XPATH, btn_buscar)
-        aptitud_automatizacion = self.driver.find_element(self, By.XPATH,
-                                                           "(//table[@class='table table-hover']//p)[1]")
-        if aptitud_automatizacion is True:
-            funciones_TyP.screenShot(self, "pantalla esperada")
-            print("** valido el step: Click boton buscar aptitud **")
+        time.sleep(t)
+        texto_comparativo = "Creatividad (Automatizacion)"
+        aptitud_buscada = self.driver.find_element(By.XPATH, "//p[text()='Creatividad (Automatizacion)']")
+        texto = aptitud_buscada.text
+        if texto == texto_comparativo:
+            funciones_TyP.screenShot(self, "Se visualiza la aptitud buscada")
+            print("** valido el step: Click boton buscar aptitud y validar **")
         else:
-            print("** hay un fallo en el step: Click boton buscar aptitud **")
-            assert False, "** hay un fallo en el step: Click boton buscar aptitud **"
+            self.driver.quit()
+            print("** hay un fallo en el step: Click boton buscar aptitud y validar **")
+            assert False, "** hay un fallo en el step: Click boton buscar aptitud y validar **"

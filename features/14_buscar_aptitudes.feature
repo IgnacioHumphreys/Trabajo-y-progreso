@@ -6,11 +6,11 @@ Feature: Buscar aptitudes
     When Validar logo pagina
     When Completar credenciales de inicio de sesion
     Then Click boton ingresar
-    #HASTA ACA INICIO DE SESION
+    #HASTA ACA INICIO DE SESION EN EL BACK
     When Click configuracion
     When Click aptitudes
     When Escribir aptitud
-    Then Click boton buscar aptitud
+    Then Click boton buscar aptitud y validar
       Examples:
 
         | user        | clave    |

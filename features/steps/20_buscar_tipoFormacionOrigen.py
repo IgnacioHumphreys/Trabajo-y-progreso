@@ -6,6 +6,6 @@ def step_impl(context):
     buscar_tipoFormacionOrigen.escribir_tipoFormacionOrigen(context)
 
 
-@then(u'Click boton buscar formacion origen')
+@then(u'Click boton buscar formacion origen y validar')
 def step_impl(context):
     buscar_tipoFormacionOrigen.click_buscar(context)

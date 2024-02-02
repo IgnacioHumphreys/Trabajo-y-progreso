@@ -6,11 +6,11 @@ Feature: Buscar grupos
     When Validar logo pagina
     When Completar credenciales de inicio de sesion
     Then Click boton ingresar
-    #HASTA ACA INICIO DE SESION
+    #HASTA ACA INICIO DE SESION EN EL BACK
     When Click configuracion
     When Click grupos
     When Escribir grupo
-    Then Click boton buscar grupo
+    And Click boton buscar grupo y validar
       Examples:
 
         | user        | clave    |

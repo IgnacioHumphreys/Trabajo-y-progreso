@@ -6,6 +6,6 @@ def step_impl(context):
     buscar_categoriaWeb.escribir_categoriaWeb(context)
 
 
-@then(u'Click boton buscar categoriaWeb')
+@then(u'Click boton buscar categoriaWeb y validar')
 def step_impl(context):
     buscar_categoriaWeb.click_buscar(context)

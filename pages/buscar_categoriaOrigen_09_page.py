@@ -11,7 +11,7 @@ class buscar_categoriaOrigen(funciones_TyP):
         super().__init__(driver)
 
     def escribir_categoriaOrigen(self):
-        funciones_TyP.input_Texto(self, By.XPATH, input_categoriaOrigen, "CategoríaOrigen (automatizacion)")
+        funciones_TyP.input_Texto(self, By.ID, "SearchCategoriaType_nombre", "CategoríaOrigen (automatizacion)")
         time.sleep(t)
 
     def escribir_categoriaWeb_en_origen(self):
@@ -19,11 +19,15 @@ class buscar_categoriaOrigen(funciones_TyP):
 
     def click_buscar(self):
         funciones_TyP.click_Field(self, By.XPATH, btn_buscar)
-        categoriaOrigen_automatizacion = self.driver.find_element(self, By.XPATH,
-                                                               "(//table[@class='table table-hover']//p)[1]")
-        if categoriaOrigen_automatizacion is True:
-            funciones_TyP.screenShot(self, "pantalla esperada")
-            print("** valido el step: Click boton buscar categoriaOrigen **")
+        time.sleep(t)
+        texto_comparativo = "CategoríaOrigen (automatizacion)"
+        categoriaOrigen_buscada = self.driver.find_element(By.XPATH,
+                                                               "//p[text()='CategoríaOrigen (automatizacion)']")
+        texto = categoriaOrigen_buscada.text
+        if texto == texto_comparativo:
+            funciones_TyP.screenShot(self, "Se visualiza la categoria origen buscada")
+            print("** valido el step: Click boton buscar categoriaOrigen y validar **")
         else:
-            print("** hay un fallo en el step: Click boton buscar categoriaOrigen **")
-            assert False, "** hay un fallo en el step: Click boton buscar categoriaOrigen **"
+            self.driver.quit()
+            print("** hay un fallo en el step: Click boton buscar categoriaOrigen y validar **")
+            assert False, "** hay un fallo en el step: Click boton buscar categoriaOrigen y validar **"

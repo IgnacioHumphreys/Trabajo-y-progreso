@@ -16,6 +16,6 @@ def step_impl(context):
     buscar_programa.seleccionar_ministerio_en_programa(context)
 
 
-@then(u'Click boton buscar programa')
+@then(u'Click boton buscar programa y validar')
 def step_impl(context):
     buscar_programa.click_buscar(context)

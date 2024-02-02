@@ -54,3 +54,8 @@ def step_impl(context):
 @then(u'Click boton eliminar preguntas frecuentes')
 def step_impl(context):
     ABM_pregunta_frecuente.click_eliminar_preguntaFrecuente(context)
+
+
+@then(u'Click boton guardar preguntas frecuentes')
+def step_impl(context):
+    ABM_pregunta_frecuente.click_guardar_preguntaFrecuente(context)

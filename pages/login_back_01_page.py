@@ -31,7 +31,7 @@ class LoginPage(funciones_TyP):
         act = ActionChains(self.driver)
         act.send_keys(Keys.ENTER).perform()
         title_BA = self.driver.find_element(By.XPATH, "//div[@class='title-container']//h4[1]")
-        if title_BA is True:
+        if title_BA.is_displayed():
             funciones_TyP.screenShot(self, "pantalla esperada")
             print("** valido el step: Click boton ingresar **")
         else:

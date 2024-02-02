@@ -6,11 +6,11 @@ Feature: Buscar categoriaWeb
     When Validar logo pagina
     When Completar credenciales de inicio de sesion
     Then Click boton ingresar
-    #HASTA ACA INICIO DE SESION
+    #HASTA ACA INICIO DE SESION EN EL BACK
     When Click configuracion
     When Click categoriasWeb
     When Escribir categoriaWeb
-    Then Click boton buscar categoriaWeb
+    Then Click boton buscar categoriaWeb y validar
       Examples:
 
         | user        | clave    |

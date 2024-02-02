@@ -6,12 +6,12 @@ Feature: ABM categoriaWeb
     When Validar logo pagina
     When Completar credenciales de inicio de sesion
     Then Click boton ingresar
-    #HASTA ACA INICIO DE SESION
+    #HASTA ACA INICIO DE SESION EN EL BACK
     When Click configuracion
     When Click categoriasWeb
     When Click boton crear
     When Completar nombre categoriaWeb
-    When Subir archivo (imagen)
+    #When Subir archivo (imagen)
     Then Click boton guardar
     When Click icono "editar"
     When Modificar nombre categoriaWeb

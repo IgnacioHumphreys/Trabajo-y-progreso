@@ -13,7 +13,7 @@ class ABM_instituciones(funciones_TyP):
     def click_instituciones(self):
         funciones_TyP.click_Field(self, By.XPATH, btn_instituciones)
         title_instituciones = self.driver.find_element(self, By.XPATH, "//h1[text()='Instituciones']")
-        if title_instituciones is True:
+        if title_instituciones.is_displayed():
             funciones_TyP.screenShot(self, "pantalla esperada")
             print("** valido el step: Click instituciones **")
         else:

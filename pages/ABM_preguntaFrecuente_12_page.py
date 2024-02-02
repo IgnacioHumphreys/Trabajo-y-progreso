@@ -2,6 +2,7 @@ import time
 from selenium.webdriver.common.by import By
 from Funciones.funciones_TyP import funciones_TyP
 from elements.elementos_back import *
+from selenium.webdriver import ActionChains
 
 t = 1
 
@@ -12,12 +13,13 @@ class ABM_pregunta_frecuente(funciones_TyP):
 
     def click_preguntas_frecuentes(self):
         funciones_TyP.click_Field(self, By.XPATH, btn_preguntasFrecuentes)
-        title_preguntasFrecuentes = self.driver.find_element(self, By.XPATH,
-                                    "//div[contains(@class,'d-flex align-items-center')]//h2[1]")
-        if title_preguntasFrecuentes is True:
+        title_preguntasFrecuentes = self.driver.find_element(By.XPATH,
+                                    "//h1[text()='Preguntas frecuentes']")
+        if title_preguntasFrecuentes.is_displayed():
             funciones_TyP.screenShot(self, "pantalla esperada")
             print("** valido el step: Click preguntas frecuentes **")
         else:
+            self.driver.quit()
             print("** hay un fallo en el step: Click preguntas frecuentes **")
             assert False, "** hay un fallo en el step: Click preguntas frecuentes **"
 
@@ -42,54 +44,64 @@ class ABM_pregunta_frecuente(funciones_TyP):
     def com_respuesta(self):
         funciones_TyP.input_Texto(self, By.XPATH, input_respuesta, "Ninguno")
 
-    '''def click_guardar_preguntaFrecuente(self):
+    def click_guardar_preguntaFrecuente(self):
         funciones_TyP.click_Field(self, By.XPATH, btn_guardar)
-        title_guardar_preguntasFrecuentes = self.driver.find_element(self, By.XPATH,
+        title_guardar_preguntasFrecuentes = self.driver.find_element(By.XPATH,
                                                             "(//div[@class='alert alert-success']//div)[2]")
-        if title_guardar_preguntasFrecuentes is True:
+        if title_guardar_preguntasFrecuentes.is_displayed():
             funciones_TyP.screenShot(self, "pantalla esperada")
             print("** valido el step: Click boton guardar preguntas frecuentes **")
             funciones_TyP.validates_visibility(self, By.XPATH, "//h5[text()='Cuales son los requerimientos?']")
         else:
+            self.driver.quit()
             print("** hay un fallo en el step: Click boton guardar preguntas frecuentes **")
-            assert False, "** hay un fallo en el step: Click boton guardar preguntas frecuentes **"'''
+            assert False, "** hay un fallo en el step: Click boton guardar preguntas frecuentes **"
 
 
     def click_editar_preguntasFrecuentes(self):
         funciones_TyP.click_Field(self, By.XPATH, btn_editar_preguntasFrecuentes)
-        title_editar_preguntasFrecuentes = self.driver.find_element(self, By.XPATH,
+        title_editar_preguntasFrecuentes = self.driver.find_element(By.XPATH,
                                                              "//div[contains(@class,'d-flex align-items-center')]//h2[1]")
-        if title_editar_preguntasFrecuentes is True:
+        if title_editar_preguntasFrecuentes.is_displayed():
             funciones_TyP.screenShot(self, "pantalla esperada")
             print("** valido el step: Click icono editar preguntas frecuentes **")
         else:
+            self.driver.quit()
             print("** hay un fallo en el step: Click icono editar preguntas frecuentes **")
             assert False, "** hay un fallo en el step: Click icono editar preguntas frecuentes **"
 
     def mod_pregunta(self):
-        funciones_TyP.input_Texto(self, By.XPATH, input_pregunta, "Cuales son los requisitos")
+        act = ActionChains(self.driver)
+        elemento = self.driver.find_element(By.XPATH, input_pregunta)
+        act.double_click(elemento).click(elemento).perform()
+        funciones_TyP.input_Texto(self, By.XPATH, input_pregunta, "Cuales son los requisitos?")
 
     def mod_respuesta(self):
+        act = ActionChains(self.driver)
+        elemento = self.driver.find_element(By.XPATH, input_respuesta)
+        act.double_click(elemento).perform()
         funciones_TyP.input_Texto(self, By.XPATH, input_respuesta, "Tener una computadora con internet")
 
     def click_tachito_preguntasFreuentes(self):
         funciones_TyP.click_Field(self, By.XPATH, btn_tachito_preguntaFrecuente)
-        title_eliminar_preguntaFrecuente = self.driver.find_element(self, By.XPATH,
+        title_eliminar_preguntaFrecuente = self.driver.find_element(By.XPATH,
                                                                     "//div[@class='modal-header']//h5[1]")
-        if title_eliminar_preguntaFrecuente is True:
+        if title_eliminar_preguntaFrecuente.is_displayed():
             funciones_TyP.screenShot(self, "pantalla esperada")
             print("** valido el step: Click icono tachito pregunta frecuente **")
         else:
+            self.driver.quit()
             print("** hay un fallo en el step: Click icono tachito pregunta frecuente **")
             assert False, "** hay un fallo en el step: Click icono tachito pregunta frecuente **"
 
     def click_eliminar_preguntaFrecuente(self):
         funciones_TyP.click_Field(self, By.XPATH, btn_eliminar_preguntaFrecuente)
-        title_preguntaFrecuente_eliminada = self.driver.find_element(self, By.XPATH,
+        title_preguntaFrecuente_eliminada = self.driver.find_element(By.XPATH,
                                                             "(//div[@class='alert alert-success']//div)[2]")
-        if title_preguntaFrecuente_eliminada is True:
+        if title_preguntaFrecuente_eliminada.is_displayed():
             funciones_TyP.screenShot(self, "pantalla esperada")
             print("** valido el step: Click boton eliminar pregunta frecuente **")
         else:
+            self.driver.quit()
             print("** hay un fallo en el step: Click boton eliminar pregunta frecuente **")
             assert False, "** hay un fallo en el step: Click icono tacboton eliminar frecuente **"

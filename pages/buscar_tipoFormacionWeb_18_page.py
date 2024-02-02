@@ -15,10 +15,12 @@ class buscar_formacionWeb(funciones_TyP):
 
     def click_buscar(self):
         funciones_TyP.click_Field(self, By.XPATH, btn_buscar)
-        curso_prueba = self.driver.find_element(self, By.XPATH, "//p[text()='Curso Prueba']")
-        if curso_prueba is True:
-            funciones_TyP.screenShot(self, "pantalla esperada")
-            print("** valido el step: Click boton buscar formacion web **")
+        time.sleep(t)
+        nombre = "Automatizacion"
+        formacionweb_buscada = self.driver.find_element(self, By.XPATH, "//p[text()='Curso Prueba']")
+        if formacionweb_buscada == nombre:
+            funciones_TyP.screenShot(self, "Se visualiza la formacion web buscada")
+            print("** valido el step: Click boton buscar formacion web y validar **")
         else:
-            print("** hay un fallo en el step: Click boton buscar formacion web **")
-            assert False, "** hay un fallo en el step: Click boton buscar formacion web **"
+            print("** hay un fallo en el step: Click boton buscar formacion web y validar **")
+            assert False, "** hay un fallo en el step: Click boton buscar formacion web y validar **"

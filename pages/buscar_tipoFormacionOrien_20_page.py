@@ -16,10 +16,11 @@ class buscar_tipoFormacionOrigen(funciones_TyP):
     def click_buscar(self):
         funciones_TyP.click_Field(self, By.XPATH, btn_buscar)
         time.sleep(t)
-        formacionOrigen = self.driver.find_element(self, By.XPATH, "//p[text()='Curso Prueba']")
-        if formacionOrigen is True:
-            funciones_TyP.screenShot(self, "pantalla esperada")
-            print("** valido el step: Click boton buscar formacion origen **")
+        nombre = "Formación origen (automatización)"
+        formacionOrigen_buscada = self.driver.find_element(self, By.XPATH, "//p[text()='Formación origen (automatización)']")
+        if formacionOrigen_buscada == nombre:
+            funciones_TyP.screenShot(self, "Se visualiza la formacion origen buscada")
+            print("** valido el step: Click boton buscar formacion origen y validar **")
         else:
-            print("** hay un fallo en el step: Click boton buscar formacion origen **")
-            assert False, "** hay un fallo en el step: Click boton buscar formacion origen **"
+            print("** hay un fallo en el step: Click boton buscar formacion origen y validar **")
+            assert False, "** hay un fallo en el step: Click boton buscar formacion origen y validar **"

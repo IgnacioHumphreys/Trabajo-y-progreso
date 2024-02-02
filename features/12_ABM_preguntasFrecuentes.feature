@@ -6,7 +6,7 @@ Feature: ABM preguntasFrecuentes
     When Validar logo pagina
     When Completar credenciales de inicio de sesion
     Then Click boton ingresar
-    #HASTA ACA INICIO DE SESION
+    #HASTA ACA INICIO DE SESION EN EL BACK
     When Click configuracion
     When Click preguntasFrecuentes
     When Click boton crear
@@ -16,11 +16,11 @@ Feature: ABM preguntasFrecuentes
     When Seleccionar capacitacion
     When Completar pregunta
     When Completar respuesta
-    Then Click boton guardar
+    Then Click boton guardar preguntas frecuentes
     When Click icono "editar" preguntas frecuentes
     When Modificar pregunta
     When Modificar respuesta
-    Then Click boton guardar
+    Then Click boton guardar preguntas frecuentes
     When Click icono "tachito" preguntas frecuentes
     Then Click boton eliminar preguntas frecuentes
       Examples:

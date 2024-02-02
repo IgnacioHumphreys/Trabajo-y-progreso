@@ -11,15 +11,18 @@ class buscar_reparticion(funciones_TyP):
         super().__init__(driver)
 
     def escribir_reparticion(self):
-        funciones_TyP.input_Texto(self, By.XPATH, input_reparticion, "DG Políticas de Juventud")
+        funciones_TyP.input_Texto(self, By.XPATH, input_reparticion, "Repartición (automatización)")
 
     def click_buscar(self):
         funciones_TyP.click_Field(self, By.XPATH, btn_buscar)
         time.sleep(t)
-        DG_Políticas_Juventud = self.driver.find_element(self, By.XPATH, "(//table[@class='table table-hover']//p)[1]")
-        if DG_Políticas_Juventud is True:
-            funciones_TyP.screenShot(self, "pantalla esperada")
-            print("** valido el step: Click boton buscar reparticion **")
+        texto_comparativo = "Repartición (automatización)"
+        reparticion_buscada = self.driver.find_element(By.XPATH, "//p[text()='Repartición (automatización)']")
+        texto = reparticion_buscada.text
+        if texto == texto_comparativo:
+            funciones_TyP.screenShot(self, "Se visualiza la reparticion buscada")
+            print("** valido el step: Click boton buscar reparticion y validar **")
         else:
-            print("** hay un fallo en el step: Click boton buscar reparticion **")
-            assert False, "** hay un fallo en el step: Click boton buscar reparticion **"
+            self.driver.quit()
+            print("** hay un fallo en el step: Click boton buscar reparticion y validar **")
+            assert False, "** hay un fallo en el step: Click boton buscar reparticion y validar **"

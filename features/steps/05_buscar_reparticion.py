@@ -6,6 +6,6 @@ def step_impl(context):
     buscar_reparticion.escribir_reparticion(context)
 
 
-@then(u'Click boton buscar reparticion')
+@then(u'Click boton buscar reparticion y validar')
 def step_impl(context):
     buscar_reparticion.click_buscar(context)

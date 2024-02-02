@@ -11,15 +11,18 @@ class buscar_ministerio(funciones_TyP):
         super().__init__(driver)
 
     def escribir_ministerio(self):
-        funciones_TyP.input_Texto(self, By.XPATH, input_nom_ministerio, "MEGC")
+        funciones_TyP.input_Texto(self, By.XPATH, input_ministerio, "Automatizacion")
 
-    def click_buscar(self):
+    def click_buscar_ministerio(self):
         funciones_TyP.click_Field(self, By.XPATH, btn_buscar)
         time.sleep(t)
-        MEGC = self.driver.find_element(self, By.XPATH, "//table[@class='table table-hover']//p[1]")
-        if MEGC is True:
-            funciones_TyP.screenShot(self, "pantalla esperada")
-            print("** valido el step: Click boton buscar **")
+        texto_comparativo = "Automatizacion"
+        min_buscado = self.driver.find_element(By.XPATH, "//p[text()='Automatizacion']")
+        texto = min_buscado.text
+        if texto == texto_comparativo:
+            funciones_TyP.screenShot(self, "Se visualiza el ministerio buscado")
+            print("** valido el step: Click boton buscar ministerio y validar **")
         else:
-            print("** hay un fallo en el step: Click boton buscar **")
-            assert False, "** hay un fallo en el step: Click boton buscar **"
+            self.driver.quit()
+            print("** hay un fallo en el step: Click boton buscar ministerio y validar **")
+            assert False, "** hay un fallo en el step: Click boton buscar ministerio y validar **"

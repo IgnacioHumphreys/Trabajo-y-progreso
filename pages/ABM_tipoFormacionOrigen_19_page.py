@@ -13,7 +13,7 @@ class ABM_tipoFormacionOrigen(funciones_TyP):
     def click_tiposFormacionOrigen(self):
         funciones_TyP.click_Field(self, By.XPATH, btn_tiposFormacionOrigen)
         title_tiposFormacionOrigen = self.driver.find_element(self, By.XPATH, "//div[@class='col']//h1[1]")
-        if title_tiposFormacionOrigen is True:
+        if title_tiposFormacionOrigen.is_displayed():
             funciones_TyP.screenShot(self, "pantalla esperada")
             print("** valido el step: Click tipos formacion origen **")
         else:
@@ -31,7 +31,7 @@ class ABM_tipoFormacionOrigen(funciones_TyP):
     '''def click_guardar_formacionOrigen(self):
         funciones_TyP.click_Field(self, By.XPATH, btn_guardar_formacionOrigen)
         title_guardar_formacionOrigen = self.driver.find_element(self, By.XPATH, "(//div[@class='alert alert-success']//div)[2]")
-        if title_guardar_formacionOrigen is True:
+        if title_guardar_formacionOrigen.is_displayed():
             funciones_TyP.screenShot(self, "pantalla esperada")
             print("** valido el step: Click boton guardar formacion origen **")
         else:

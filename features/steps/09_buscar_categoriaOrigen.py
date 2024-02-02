@@ -11,6 +11,6 @@ def step_impl(context):
     buscar_categoriaOrigen.escribir_categoriaWeb_en_origen(context)
 
 
-@then(u'Click boton buscar categoriaOrigen')
+@then(u'Click boton buscar categoriaOrigen y validar')
 def step_impl(context):
     buscar_categoriaOrigen.click_buscar(context)

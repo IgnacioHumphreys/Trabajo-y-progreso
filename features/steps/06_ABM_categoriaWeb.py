@@ -11,9 +11,9 @@ def step_impl(context):
     ABM_categoriaWeb.input_categoriaWeb(context)
 
 
-@when(u'Subir archivo (imagen)')
-def step_impl(context):
-    ABM_categoriaWeb.subirArchivo(context)
+#@when(u'Subir archivo (imagen)')
+#def step_impl(context):
+#    ABM_categoriaWeb.subirArchivo(context)
 
 
 @when(u'Modificar nombre categoriaWeb')

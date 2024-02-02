@@ -6,14 +6,14 @@ Feature: Buscar programa
     When Validar logo pagina
     When Completar credenciales de inicio de sesion
     Then Click boton ingresar
-    #HASTA ACA INICIO DE SESION
+    #HASTA ACA INICIO DE SESION EN EL BACK
     When Click configuracion
     When Click programas
     When Escribir codigo programa
     When Escribir nombre programa
     When Seleccionar ministerio en programa
     When Seleccionar reparticion
-    Then Click boton buscar programa
+    Then Click boton buscar programa y validar
       Examples:
 
         | user        | clave    |

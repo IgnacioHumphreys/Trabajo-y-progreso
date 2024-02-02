@@ -16,10 +16,14 @@ class buscar_categoriaWeb(funciones_TyP):
 
     def click_buscar(self):
         funciones_TyP.click_Field(self, By.XPATH, btn_buscar)
-        CategoríaWeb_automatizacion = self.driver.find_element(self, By.XPATH, "//table[@class='table table-hover']//p[1]")
-        if CategoríaWeb_automatizacion is True:
-            funciones_TyP.screenShot(self, "pantalla esperada")
-            print("** valido el step: Click boton buscar categoriaWeb **")
+        time.sleep(t)
+        texto_comparativo = "CategoríaWeb (automatización)"
+        CategoriaWeb_buscada = self.driver.find_element(By.XPATH, "//p[text()='CategoríaWeb (automatización)']")
+        texto = CategoriaWeb_buscada.text
+        if texto == texto_comparativo:
+            funciones_TyP.screenShot(self, "Se visualiza la categoria web buscada")
+            print("** valido el step: Click boton buscar categoriaWeb y validar **")
         else:
-            print("** hay un fallo en el step: Click boton buscar categoriaWeb **")
-            assert False, "** hay un fallo en el step: Click boton buscar categoriaWeb **"
+            self.driver.quit()
+            print("** hay un fallo en el step: Click boton buscar categoriaWeb y validar **")
+            assert False, "** hay un fallo en el step: Click boton buscar categoriaWeb y validar **"
