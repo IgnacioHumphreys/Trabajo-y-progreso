@@ -2,6 +2,7 @@ import time
 from selenium.webdriver.common.by import By
 from Funciones.funciones_TyP import funciones_TyP
 from elements.elementos_back import *
+from selenium.webdriver import ActionChains
 
 t = 1
 
@@ -12,7 +13,7 @@ class ABM_instituciones(funciones_TyP):
 
     def click_instituciones(self):
         funciones_TyP.click_Field(self, By.XPATH, btn_instituciones)
-        title_instituciones = self.driver.find_element(self, By.XPATH, "//h1[text()='Instituciones']")
+        title_instituciones = self.driver.find_element(By.XPATH, "//h1[text()='Instituciones']")
         if title_instituciones.is_displayed():
             funciones_TyP.screenShot(self, "pantalla esperada")
             print("** valido el step: Click instituciones **")
@@ -32,4 +33,7 @@ class ABM_instituciones(funciones_TyP):
         funciones_TyP.click_Field(self, By.XPATH, select_programa)
 
     def mod_codigo_institucion(self):
+        act = ActionChains(self.driver)
+        elemento = self.driver.find_element(By.XPATH, input_cod_institucion)
+        act.double_click(elemento).perform()
         funciones_TyP.input_Texto(self, By.XPATH, input_cod_institucion, "2323")

@@ -10,7 +10,7 @@ Feature: Buscar tipo Formacion Origen
     When Click educacion
     When Click tipos de formacion origen
     When Escribir formacion origen
-    And Click boton buscar formacion origen y validar
+    Then Click boton buscar formacion origen y validar
       Examples:
 
         | user        | clave    |

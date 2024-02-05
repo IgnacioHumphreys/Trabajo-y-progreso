@@ -11,14 +11,15 @@ class buscar_tipoFormacionOrigen(funciones_TyP):
         super().__init__(driver)
 
     def escribir_tipoFormacionOrigen(self):
-        funciones_TyP.input_Texto(self, By.XPATH, input_formacionOrigen, "Formación origen_Test")
+        funciones_TyP.input_Texto(self, By.XPATH, input_formacionOrigen, "Formación origen (automatización)")
 
     def click_buscar(self):
         funciones_TyP.click_Field(self, By.XPATH, btn_buscar)
         time.sleep(t)
-        nombre = "Formación origen (automatización)"
-        formacionOrigen_buscada = self.driver.find_element(self, By.XPATH, "//p[text()='Formación origen (automatización)']")
-        if formacionOrigen_buscada == nombre:
+        texto_comparativo = "Formación origen (automatización)"
+        formacionOrigen_buscada = self.driver.find_element(By.XPATH, "//p[text()='Formación origen (automatización)']")
+        texto = formacionOrigen_buscada.text
+        if texto == texto_comparativo:
             funciones_TyP.screenShot(self, "Se visualiza la formacion origen buscada")
             print("** valido el step: Click boton buscar formacion origen y validar **")
         else:

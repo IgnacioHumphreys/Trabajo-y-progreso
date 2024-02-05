@@ -10,7 +10,7 @@ Feature: Buscar tipo formacion web
     When Click educacion
     When Click tipos de formacion web
     When Escribir formacion web
-    And Click boton buscar formacion web y validar
+    Then Click boton buscar formacion web y validar
       Examples:
 
         | user        | clave    |

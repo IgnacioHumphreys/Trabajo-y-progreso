@@ -2,6 +2,7 @@ import time
 from selenium.webdriver.common.by import By
 from Funciones.funciones_TyP import funciones_TyP
 from elements.elementos_back import *
+from selenium.webdriver import ActionChains
 
 t = 1
 
@@ -12,7 +13,7 @@ class ABM_tipoFormacionWeb(funciones_TyP):
 
     def click_educacion(self):
         funciones_TyP.click_Field(self, By.XPATH, btn_educacion)
-        btn_tiposFormacionWeb = self.driver.find_element(self, By.XPATH, "(//div[@id='educacionCollapse']//a)[2]")
+        btn_tiposFormacionWeb = self.driver.find_element(By.XPATH, "//a[contains(text(),'Tipos de formación web')]")
         if btn_tiposFormacionWeb.is_displayed():
             funciones_TyP.screenShot(self, "pantalla esperada")
             print("** valido el step: Click educacion **")
@@ -22,7 +23,7 @@ class ABM_tipoFormacionWeb(funciones_TyP):
 
     def click_tiposFormacionWeb(self):
         funciones_TyP.click_Field(self, By.XPATH, btn_tiposFormacionWeb)
-        title_tiposFormacionWeb = self.driver.find_element(self, By.XPATH, "//div[@class='col']//h1[1]")
+        title_tiposFormacionWeb = self.driver.find_element(By.XPATH, "//div[@class='col']//h1[1]")
         if title_tiposFormacionWeb.is_displayed():
             funciones_TyP.screenShot(self, "pantalla esperada")
             print("** valido el step: Click tipos formacion web **")
@@ -31,7 +32,7 @@ class ABM_tipoFormacionWeb(funciones_TyP):
             assert False, "** hay un fallo en el step: Click tipos formacion web **"
 
     def com_nom_formacionWeb(self):
-        funciones_TyP.input_Texto(self, By.XPATH, input_formacionWeb, "Cursos 2")
+        funciones_TyP.input_Texto(self, By.ID, input_formacionWeb, "Cursos 2")
 
     def select_color(self):
         funciones_TyP.click_Field(self, By.XPATH, box_colorEtiqueta)
@@ -49,7 +50,10 @@ class ABM_tipoFormacionWeb(funciones_TyP):
             assert False, "** hay un fallo en el step: Click boton guardar formacion web **"'''
 
     def mod_nom_formacionWeb(self):
-        funciones_TyP.input_Texto(self, By.XPATH, input_formacionWeb, "Cursos 3")
+        act = ActionChains(self.driver)
+        elemento = self.driver.find_element(By.ID, input_formacionWeb)
+        act.double_click(elemento).double_click(elemento).perform()
+        funciones_TyP.input_Texto(self, By.ID, input_formacionWeb, "Cursos 3")
 
     def mod_color_etiqueta(self):
         funciones_TyP.click_Field(self, By.XPATH, box_colorEtiqueta)

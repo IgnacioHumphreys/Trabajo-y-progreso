@@ -12,7 +12,7 @@ Feature: Buscar Institucion
     When Escribir codigo institucion
     When Escribir nombre institucion
     When Seleccionar programa en institucion
-    And Click boton buscar institucion y validar
+    Then Click boton buscar institucion y validar
       Examples:
 
         | user        | clave    |

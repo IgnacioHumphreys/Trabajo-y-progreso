@@ -29,3 +29,13 @@ def step_impl(context):
 @when(u'Modificar nombre grupo')
 def step_impl(context):
     ABM_grupos.mod_nom_grupo(context)
+
+
+@when(u'Click icono "editar" grupos')
+def step_impl(context):
+    ABM_grupos.click_editar(context)
+
+
+@when(u'Click icono "tachito" grupo')
+def step_impl(context):
+    ABM_grupos.click_tachito(context)

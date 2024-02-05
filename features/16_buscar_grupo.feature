@@ -10,7 +10,7 @@ Feature: Buscar grupos
     When Click configuracion
     When Click grupos
     When Escribir grupo
-    And Click boton buscar grupo y validar
+    Then Click boton buscar grupo y validar
       Examples:
 
         | user        | clave    |

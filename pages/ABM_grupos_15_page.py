@@ -31,17 +31,20 @@ class ABM_grupos(funciones_TyP):
     def select_capacitaciones(self):
         act = ActionChains(self.driver)
         #Scrool hasta una capacitacion
-        funciones_TyP.scrollToElement(self, By.XPATH, "//p[text()='10000000002']")
-        time.sleep(t)
+        '''funciones_TyP.scrollToElement(self, By.XPATH, "//p[text()='10000000002']")
+        time.sleep(t)'''
         #Click a capacitacion
-        #funciones_TyP.click_Field(self, By.XPATH, select_capacitacion1)
+        check1 = self.driver.find_element(By.ID, "customCheck2")
+        check1.click()
+        '''funciones_TyP.click_Field(self, By.XPATH, select_capacitacion1)
         elemento = self.driver.find_element(By.ID, "customCheck2")
         act.click(elemento).perform()
-        time.sleep(t)
+        time.sleep(t)'''
         #Scrool hasta otra capacitacion
-        funciones_TyP.scrollToElement(self, By.ID, select_capacitacion2)
+        '''funciones_TyP.scrollToElement(self, By.ID, select_capacitacion2)'''
         # Click a capacitacion
-        funciones_TyP.click_Field(self, By.ID, select_capacitacion2)
+        check2 = self.driver.find_element(By.ID, "customCheck1")
+        check2.click()
 
     def click_publicar(self):
         funciones_TyP.scrollToElement(self, By.XPATH, btn_publicar)
@@ -55,11 +58,35 @@ class ABM_grupos(funciones_TyP):
             print("** hay un fallo en el step: Click boton publicar **")
             assert False, "** hay un fallo en el step: Click boton publicar **"
 
+    def click_editar(self):
+        funciones_TyP.scrollToElement(self, By.XPATH, btn_editar_grupo)
+        funciones_TyP.click_Field(self, By.XPATH, btn_editar_grupo)
+        editar_grupo = self.driver.find_element(By.XPATH, "//h2[@class='d-inline m-0']")
+        if editar_grupo.is_displayed():
+            funciones_TyP.screenShot(self, "Editar grupo")
+            print("** valido el step: Click icono editar grupo **")
+        else:
+            self.driver.quit()
+            print("** hay un fallo en el step: Click icono editar grupo **")
+            assert False, "** hay un fallo en el step: Click icono editar grupo **"
+
     def mod_nom_grupo(self):
-        act =ActionChains(self.driver)
+        act = ActionChains(self.driver)
         elemento = self.driver.find_element(By.XPATH, input_grupo)
-        act.double_click(elemento).perform()
+        act.double_click(elemento).double_click(elemento).perform()
         funciones_TyP.input_Texto(self, By.XPATH, input_grupo, "Cursos promedio")
+
+    def click_tachito(self):
+        funciones_TyP.scrollToElement(self, By.XPATH, btn_tachito_grupo)
+        funciones_TyP.click_Field(self, By.XPATH, btn_tachito_grupo)
+        editar_grupo = self.driver.find_element(By.XPATH, "//div[@class='modal-header']//h5[1]")
+        if editar_grupo.is_displayed():
+            funciones_TyP.screenShot(self, "Eliminar grupo")
+            print("** valido el step: Click icono tachito grupo **")
+        else:
+            self.driver.quit()
+            print("** hay un fallo en el step: Click icono tachito grupo **")
+            assert False, "** hay un fallo en el step: Click icono tachito grupo **"
 
     '''def click_guardar_grupo(self):
         funciones_TyP.scrollToElement(self, By.XPATH, btn_guardar)

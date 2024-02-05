@@ -18,9 +18,10 @@ class buscar_institucion(funciones_TyP):
 
     def click_buscar_instituion(self):
         funciones_TyP.click_Field(self, By.XPATH, btn_buscar)
-        codigo = "2525"
-        institucion_automatizacion = self.driver.find_element(self, By.XPATH, "//p[text()='2525']")
-        if institucion_automatizacion == codigo:
+        texto_comparativo = "2525"
+        institucion_automatizacion = self.driver.find_element(By.XPATH, "//p[text()='2525']")
+        texto = institucion_automatizacion.text
+        if texto == texto_comparativo:
             funciones_TyP.screenShot(self, "Se visualiza la institucion buscada")
             print("** valido el step: Click boton buscar institucion **")
         else:

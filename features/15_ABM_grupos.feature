@@ -14,11 +14,11 @@ Feature: ABM grupos
     When Cambiar switch activo/inactivo
     When Seleccionar capacitaciones
     Then Click boton publicar
-    When Click icono "editar"
+    When Click icono "editar" grupos
     When Modificar nombre grupo
     When Cambiar switch activo/inactivo
     Then Click boton guardar
-    When Click icono "tachito"
+    When Click icono "tachito" grupo
     Then Click boton eliminar
       Examples:
 

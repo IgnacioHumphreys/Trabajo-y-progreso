@@ -2,6 +2,7 @@ import time
 from selenium.webdriver.common.by import By
 from Funciones.funciones_TyP import funciones_TyP
 from elements.elementos_back import *
+from selenium.webdriver import ActionChains
 
 t = 1
 
@@ -12,7 +13,7 @@ class ABM_tipoFormacionOrigen(funciones_TyP):
 
     def click_tiposFormacionOrigen(self):
         funciones_TyP.click_Field(self, By.XPATH, btn_tiposFormacionOrigen)
-        title_tiposFormacionOrigen = self.driver.find_element(self, By.XPATH, "//div[@class='col']//h1[1]")
+        title_tiposFormacionOrigen = self.driver.find_element(By.XPATH, "//div[@class='col']//h1[1]")
         if title_tiposFormacionOrigen.is_displayed():
             funciones_TyP.screenShot(self, "pantalla esperada")
             print("** valido el step: Click tipos formacion origen **")
@@ -39,4 +40,7 @@ class ABM_tipoFormacionOrigen(funciones_TyP):
             assert False, "** hay un fallo en el step: Click boton guardar formacion origen **"'''
 
     def mod_nom_formacionOrigen(self):
+        act = ActionChains(self.driver)
+        elemento = self.driver.find_element(By.XPATH, input_formacionOrigen)
+        act.double_click(elemento).perform()
         funciones_TyP.input_Texto(self, By.XPATH, input_formacionOrigen, "Formacion Origen")

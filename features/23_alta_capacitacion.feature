@@ -11,7 +11,7 @@ Feature: Alta capacitacion
     When Click capacitaciones
     When Click boton crear
     When Completar todos los campos
-    And  Click guardar como borrador y validar
+    Then  Click guardar como borrador y validar
     When Click icono "editar"
     Then Click boton cargar
       Examples:
