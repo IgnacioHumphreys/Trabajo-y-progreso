@@ -1,5 +1,5 @@
 from behave import *
-from pages.buscar_categoriaOrigen_09_page import buscar_categoriaOrigen
+from pages.back_end_pages.buscar_categoriaOrigen_09_page import buscar_categoriaOrigen
 
 @when(u'Escribir categoriaOrigen')
 def step_impl(context):

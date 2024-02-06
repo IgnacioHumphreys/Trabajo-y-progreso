@@ -1,5 +1,5 @@
 from behave import *
-from pages.ABM_reparticion_04_page import ABM_reparticion
+from pages.back_end_pages.ABM_reparticion_04_page import ABM_reparticion
 
 @when(u'Click reparticiones')
 def step_impl(context):

@@ -1,5 +1,5 @@
 from behave import *
-from pages.ABM_instituciones_21_page import ABM_instituciones
+from pages.back_end_pages.ABM_instituciones_21_page import ABM_instituciones
 
 @when(u'Click institucines')
 def step_impl(context):

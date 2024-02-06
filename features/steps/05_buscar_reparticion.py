@@ -1,5 +1,5 @@
 from behave import *
-from pages.buscar_reparticion_05_page import buscar_reparticion
+from pages.back_end_pages.buscar_reparticion_05_page import buscar_reparticion
 
 @when(u'Escribir reparticion')
 def step_impl(context):

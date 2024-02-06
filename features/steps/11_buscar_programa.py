@@ -1,5 +1,5 @@
 from behave import *
-from pages.buscar_programa_11_page import buscar_programa
+from pages.back_end_pages.buscar_programa_11_page import buscar_programa
 
 @when(u'Escribir codigo programa')
 def step_impl(context):

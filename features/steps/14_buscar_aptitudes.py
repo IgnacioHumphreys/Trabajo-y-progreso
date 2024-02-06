@@ -1,5 +1,5 @@
 from behave import *
-from pages.buscar_aptitudes_14_page import buscar_aptitud
+from pages.back_end_pages.buscar_aptitudes_14_page import buscar_aptitud
 
 @when(u'Escribir aptitud')
 def step_impl(context):

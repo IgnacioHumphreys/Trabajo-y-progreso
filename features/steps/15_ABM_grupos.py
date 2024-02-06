@@ -1,5 +1,5 @@
 from behave import *
-from pages.ABM_grupos_15_page import ABM_grupos
+from pages.back_end_pages.ABM_grupos_15_page import ABM_grupos
 
 @when(u'Click grupos')
 def step_impl(context):

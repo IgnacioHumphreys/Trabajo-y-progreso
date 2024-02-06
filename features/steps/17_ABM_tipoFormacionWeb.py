@@ -1,5 +1,5 @@
 from behave import *
-from pages.ABM_tipoFormacionWeb_17_page import ABM_tipoFormacionWeb
+from pages.back_end_pages.ABM_tipoFormacionWeb_17_page import ABM_tipoFormacionWeb
 
 
 @when(u'Click educacion')

@@ -1,5 +1,5 @@
 from behave import *
-from pages.ABM_tipoFormacionOrigen_19_page import ABM_tipoFormacionOrigen
+from pages.back_end_pages.ABM_tipoFormacionOrigen_19_page import ABM_tipoFormacionOrigen
 
 @when(u'Click tipos de formacion origen')
 def step_impl(context):

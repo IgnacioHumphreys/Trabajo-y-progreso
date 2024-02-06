@@ -1,5 +1,5 @@
 from behave import *
-from pages.buscar_categoriaWeb_07_page import buscar_categoriaWeb
+from pages.back_end_pages.buscar_categoriaWeb_07_page import buscar_categoriaWeb
 
 @when(u'Escribir categoriaWeb')
 def step_impl(context):
