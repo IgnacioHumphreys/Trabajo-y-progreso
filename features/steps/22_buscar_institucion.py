@@ -1,5 +1,5 @@
 from behave import*
-from pages.back_end_pages.buscar_institucion_22_page import buscar_institucion
+from pages.buscar_institucion_22_page import buscar_institucion
 
 @when(u'Escribir codigo institucion')
 def step_impl(context):

@@ -1,5 +1,5 @@
 from behave import *
-from pages.back_end_pages.buscar_ministerio_03_page import buscar_ministerio
+from pages.buscar_ministerio_03_page import buscar_ministerio
 
 @when(u'Escribir ministerio')
 def step_impl(context):

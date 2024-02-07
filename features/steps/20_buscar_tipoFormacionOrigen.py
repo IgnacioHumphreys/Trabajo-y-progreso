@@ -1,5 +1,5 @@
 from behave import*
-from pages.back_end_pages.buscar_tipoFormacionOrien_20_page import buscar_tipoFormacionOrigen
+from pages.buscar_tipoFormacionOrien_20_page import buscar_tipoFormacionOrigen
 
 @when(u'Escribir formacion origen')
 def step_impl(context):

@@ -1,5 +1,5 @@
 from behave import *
-from pages.back_end_pages.ABM_preguntaFrecuente_12_page import ABM_pregunta_frecuente
+from pages.ABM_preguntaFrecuente_12_page import ABM_pregunta_frecuente
 
 @when(u'Click preguntasFrecuentes')
 def step_impl(context):

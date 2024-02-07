@@ -1,5 +1,5 @@
 from behave import*
-from pages.back_end_pages.buscar_grupo_16_page import buscar_grupo
+from pages.buscar_grupo_16_page import buscar_grupo
 
 @when(u'Escribir grupo')
 def step_impl(context):

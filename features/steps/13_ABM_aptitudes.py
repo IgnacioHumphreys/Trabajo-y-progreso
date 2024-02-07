@@ -1,5 +1,5 @@
 from behave import *
-from pages.back_end_pages.ABM_aptitudes_13_page import ABM_aptitudes
+from pages.ABM_aptitudes_13_page import ABM_aptitudes
 
 @when(u'Click aptitudes')
 def step_impl(context):

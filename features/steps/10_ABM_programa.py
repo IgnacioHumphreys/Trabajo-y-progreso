@@ -1,5 +1,5 @@
 from behave import *
-from pages.back_end_pages.ABM_programa_10_page import ABM_programa
+from pages.ABM_programa_10_page import ABM_programa
 
 @when(u'Click programas')
 def step_impl(context):

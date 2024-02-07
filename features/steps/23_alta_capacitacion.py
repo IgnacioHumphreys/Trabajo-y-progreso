@@ -1,5 +1,5 @@
 from behave import*
-from pages.back_end_pages.alta_capacitacion_23_page import alta_capacitacion
+from pages.alta_capacitacion_23_page import alta_capacitacion
 
 @when(u'Click capacitaciones')
 def step_impl(context):

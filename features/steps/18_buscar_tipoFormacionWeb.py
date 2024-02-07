@@ -1,5 +1,5 @@
 from behave import*
-from pages.back_end_pages.buscar_tipoFormacionWeb_18_page import buscar_formacionWeb
+from pages.buscar_tipoFormacionWeb_18_page import buscar_formacionWeb
 
 @when(u'Escribir formacion web')
 def step_impl(context):

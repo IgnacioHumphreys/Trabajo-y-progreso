@@ -1,5 +1,5 @@
 from behave import *
-from pages.back_end_pages.login_back_01_page import LoginPage
+from pages.login_back_01_page import LoginPage
 
 @given(u'Ingreso al portal de oportunidades')
 def step_impl(context):

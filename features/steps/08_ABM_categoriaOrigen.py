@@ -1,5 +1,5 @@
 from behave import *
-from pages.back_end_pages.ABM_categoriaOrigen_08_page import ABM_categoriaOrigen
+from pages.ABM_categoriaOrigen_08_page import ABM_categoriaOrigen
 
 @when(u'Click categoriasOrigen')
 def step_impl(context):
